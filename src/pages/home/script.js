@@ -1,4 +1,4 @@
-import { render } from "../../utils/render"; 
+import { render } from "../../utils/render";
 import { header } from "../../components/header";
 import { api } from "../../utils/api";
 import { footer } from "../../components/footer";
@@ -22,14 +22,20 @@ Promise.all([promise1, promise2, promise3])
     render(nowPlaying.data.results.slice(0, 8), movie, Card);
     render(popular.data.results.slice(0, 4), popularGrid, Card);
     render(upcoming.data.results.slice(0, 4), upcomingGrid, Card);
-    render(popular.data.results.slice(0, 12), trailersBox, TrailerCard);
+    render(upcoming.data.results.slice(0, 12), trailersBox, TrailerCard);
 
-    const firstMovie = upcoming.data.results[0];
+  const firstMovie = upcoming.data.results[0];
 
     if (firstMovie) {
       api.get(`/movie/${firstMovie.id}/videos`)
         .then(res => {
+          // console.log(res.data);
           const videos = res.data.results;
+
+          if (!videos || videos.length === 0) {
+            console.warn("Вообще нет видео");
+            return;
+          }
 
           let found = videos.find(v => v.type.toLowerCase() === "trailer");
           if (!found) {
@@ -39,14 +45,25 @@ Promise.all([promise1, promise2, promise3])
             found = videos[0];
           }
 
-          if (found) {
+          if (found && found.site.toLowerCase() === "youtube" && found.key) {
             const iframe = document.querySelector(".trailer");
             iframe.src = `https://www.youtube.com/embed/${found.key}`;
+            // console.log(found);
           } else {
-            console.warn("Видео не найдено для первого фильма.");
+            console.warn("Видео не найдено");
           }
         })
-        .catch(err => console.error("Ошибка при получении видео:", err));
+        .catch(err => console.error(err));
     }
   })
   .catch(error => console.error(error));
+
+
+
+  
+  document.querySelector(".search-btn").onclick = () => {
+    document.querySelector(".search-modal").classList.add("active");
+  };
+  document.querySelector(".close-modal").onclick = () => {
+    document.querySelector(".search-modal").classList.remove("active");
+  };

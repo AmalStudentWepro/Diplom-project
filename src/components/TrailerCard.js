@@ -1,5 +1,15 @@
 import { api } from "../utils/api";
 
+
+let fallbackVideos = [
+  "https://www.youtube.com/embed/tTQIF3VwIwI",
+  "https://www.youtube.com/embed/mc93fO8ub8M?si=An5u8CcqQEl5OOSc",
+  "https://www.youtube.com/embed/UUsgZEySv5k?si=Lfxpii-5LvdMFdXe",
+  "https://www.youtube.com/embed/5PSNL1qE6VY",
+  "https://www.youtube.com/embed/PMeHdc25BGE?si=TtAqh1jaetHKHEFe"
+];
+
+
 export function TrailerCard(item) {
   const div = document.createElement("div");
   const img = document.createElement("img");
@@ -15,36 +25,35 @@ export function TrailerCard(item) {
   div.append(img, p);
 
   div.onclick = () => {
-    let iframe = document.querySelector(".trailer");
+    const iframe = document.querySelector(".trailer");
   
     api.get(`/movie/${item.id}/videos`)
       .then(res => {
-        const videos = res.data.results;
+        const videos = res.data.results || [];
+        // console.log(videos);
   
-        let found = videos.find(
-          (video) => video.type.toLowerCase() === "trailer"
-        );
-  
+        let found = videos.find(v => v.type.toLowerCase() === "trailer");
         if (!found) {
-          found = videos.find(
-            (video) => video.type.toLowerCase() === "teaser"
-          );
+          found = videos.find(v => v.type.toLowerCase() === "teaser");
         }
         if (!found && videos.length > 0) {
           found = videos[0];
         }
-        if (found) {
+  
+        if (found && found.site.toLowerCase() === "youtube" && found.key) {
           iframe.src = `https://www.youtube.com/embed/${found.key}`;
+          
         } else {
-          alert("Видео не найдено :(");
+          const randomUrl = fallbackVideos[Math.floor(Math.random() * fallbackVideos.length)];
+          iframe.src = randomUrl;
         }
       })
-      .catch(err => {
-        console.error("Ошибка при получении видео:", err);
-        alert("Не удалось загрузить видео.");
+      .catch(error => {
+        console.error(error);
+        const randomUrl = fallbackVideos[Math.floor(Math.random() * fallbackVideos.length)];
+        iframe.src = randomUrl;
       });
   };
-  
-
-  return div;
+    
+    return div;
 }

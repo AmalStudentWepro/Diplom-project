@@ -443,4 +443,66 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-  
+
+
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+
+.search-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.search-modal-content input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-submit {
+  background: #e7ff1e;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-modal-content {
+  background: #161b22;
+  padding: 20px 25px;
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.search-submit img {
+  width: 20px;
+  height: 20px;
+}
