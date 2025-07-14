@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Зарегистрироваться</title>
+  <link rel="stylesheet" href="./style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="auth-modal">
+
+    <form class="auth-form">
+      <h2>Зарегистрироваться</h2>
+
+      <input type="text" name="firstName" autocomplete="given-name" placeholder="Имя" required />
+      <input type="text" name="lastName" autocomplete="family-name" placeholder="Фамилия" required />
+      <input type="text" name="username" autocomplete="username" placeholder="Придумайте логин" required />
+      <input type="password" name="password" autocomplete="password" placeholder="Придумайте пароль" required />
+      <input type="password" name="confirmPassword" autocomplete="password" placeholder="Повторите пароль" required />
+      <input type="email" name="email" autocomplete="email" placeholder="Номер телефона или e-mail" required />
+      
+      
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" required />
+          Соглашаюсь на условия <a href="#">политики конфиденциальности</a>
+        </label>
+        <label>
+          <input type="checkbox" required />
+          Соглашаюсь на обработку персональных данных
+        </label>
+      </div>
+
+      <button type="submit" class="btn submit-btn">Зарегистрироваться</button>
+    </form>
+  </div>
+
+      <script type="module" src="./script.js"></script>
+
+</body>
+</html>

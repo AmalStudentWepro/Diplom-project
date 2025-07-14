@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d1117;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-modal {
+  background: #161b22;
+  width: 350px;
+  padding: 30px 30px 20px;
+  border-radius: 12px;
+  position: relative;
+  color: #fff;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #0d1117;
+  color: #fff;
+  font-size: 14px;
+}
+
+.auth-form input::placeholder {
+  color: #aaa;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-btn {
+  background: #F2F60F;
+  color: #000;
+}
+
+.signup-btn {
+  background: #1E2538;
+  color: #fff;
+}
+
+.recover {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.recover a {
+  color: #3B62F6;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.social {
+  flex: 1;
+  background: #2A2E3B;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}

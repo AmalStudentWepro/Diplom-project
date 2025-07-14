@@ -30,7 +30,6 @@ export function TrailerCard(item) {
     api.get(`/movie/${item.id}/videos`)
       .then(res => {
         const videos = res.data.results || [];
-        // console.log(videos);
   
         let found = videos.find(v => v.type.toLowerCase() === "trailer");
         if (!found) {

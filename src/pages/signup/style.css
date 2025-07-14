@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d1117;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-modal {
+  background: #161b22;
+  width: 400px;
+  padding: 30px;
+  border-radius: 14px;
+  color: #fff;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="name"],
+.auth-form input[type="password"],
+.auth-form input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #1E2538;
+  color: #fff;
+  font-size: 14px;
+}
+
+.auth-form input::placeholder {
+  color: #aaa;
+}
+
+.checkbox-group {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #F2F60F;
+  transform: scale(1.1);
+}
+
+.checkbox-group a {
+  color: #F2F60F;
+  text-decoration: underline;
+}
+
+.btn.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #F2F60F;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+.input-error {
+  border: 1px solid red;
+}
+
+.input-error input[type="checkbox"] {
+    outline: 2px solid red;
+}

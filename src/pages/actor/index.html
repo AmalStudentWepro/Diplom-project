@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Актёр</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="actor-page">
+    <div class="actor-header">
+      <img class="actor-photo" src="/public/placeholder.jpg" alt="Фото актёра">
+      <div class="actor-info">
+        <nav class="breadcrumb">Главная > Актёры > <span class="actor-name">Имя</span></nav>
+        <h1 class="actor-name">Имя актёра</h1>
+        <h2 class="actor-original">Оригинальное имя</h2>
+        <div class="tabs">
+          <button class="active">Информация</button>
+          <button>Биография</button>
+        </div>
+        <div class="actor-details">
+          <p class="actor-bio">Биография...</p>
+          <p><b>Дата рождения:</b> <span class="actor-birthday">—</span></p>
+          <p><b>Место рождения:</b> <span class="actor-place">—</span></p>
+          <p><b>Популярность:</b> <span class="actor-popularity">—</span></p>
+        </div>
+        <div class="actor-favorite">
+          <svg></svg>
+          <span>В избранном у 37953 человек</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="best-movies">
+      <h3>Лучшие фильмы</h3>
+      <div class="movie-cards">
+        <div class="movie-card">
+          <img src="/public/card.webp" alt="Начало">
+          <div class="movie-rating">8.80</div>
+          <p class="movie-title">Начало</p>
+          <p class="movie-meta">Фантастика, боевик, триллер</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="actor-photos">
+      <h3>Фото</h3>
+      <p class="photo-subtitle actor-name">Актёр</p>
+      <div class="photo-grid">
+        <img src="/public/actor1.jpg">
+        <img src="/public/actor1.jpg">
+        <img src="/public/actor1.jpg">
+        <img src="/public/actor1.jpg">
+        <img src="/public/actor1.jpg">
+        <div class="photo-overlay">+196</div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>

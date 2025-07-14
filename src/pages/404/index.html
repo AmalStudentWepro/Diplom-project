@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0d1117;
+  color: #ffffff;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.error-content {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.error-content h1 {
+  font-size: 96px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.error-content h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.error-content p {
+  font-size: 16px;
+  color: #8b949e;
+  margin-bottom: 30px;
+}
+
+.error-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn.primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  background-color: #1e4fd6;
+}
+
+.btn.secondary {
+  border: 1px solid #8b949e;
+  color: #ffffff;
+  background: transparent;
+}
+
+.btn.secondary:hover {
+  background-color: #1e1e1e;
+}
+
+.header {
+  background-color: #0d1117;
+  padding: 20px 0;
+  border-bottom: 1px solid #21262d;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 30px;
+  margin-right: 8px;
+}
+
+.logo .blue {
+  color: #2f81f7;
+}
+
+.logo .white {
+  color: #fff;
+}
+
+.social-icons img {
+  width: 18px;
+  margin-left: 10px;
+  filter: brightness(0) invert(1);
+  cursor: pointer;
+}
+
+.main-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover {
+  color: #2f81f7;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-btn {
+  background-color: #fff;
+  color: #0d1117;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-btn {
+  background-color: #2f81f7;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.user-link {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #3a3a3a;
+  transition: background 0.3s;
+}
+
+.user-link:hover {
+  background: #555;
+}
+
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.search-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-modal-content {
+  background: #161b22;
+  padding: 20px 25px;
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.search-modal-content input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-submit {
+  background: #e7ff1e;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-submit img {
+  width: 20px;
+  height: 20px;
+}
+.logo{
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #161b22;
+  padding: 20px 0;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+  color: #8b949e;
+}
+
+.small-grid {
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+}
+
+.reduced img {
+  height: 150px;
+  object-fit: cover;
+}
+
+.reduced .movie-card p {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 30px;
+  margin-right: 8px;
+}
+
+.logo .blue {
+  color: #2f81f7;
+}
+
+.logo .white {
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .error-content h1 {
+    font-size: 72px;
+  }
+  .error-content h2 {
+    font-size: 22px;
+  }
+  .error-content p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .error-content h1 {
+    font-size: 56px;
+  }
+  .error-content h2 {
+    font-size: 20px;
+  }
+  .error-content p {
+    font-size: 14px;
+  }
+  .error-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-content h1 {
+    font-size: 44px;
+  }
+  .error-content h2 {
+    font-size: 18px;
+  }
+  .error-content p {
+    font-size: 13px;
+  }
+  .btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+</style>
+</head>
+<body>
+    <div id="app4"></div>
+    <div class="error-page">
+        <div class="error-content">
+          <h1>404</h1>
+          <h2>Кина не будет:(</h2>
+          <p>Возможно, данного адреса страницы не существует, или страница была перемещена.</p>
+          <div class="error-buttons">
+            <a href="/" class="btn primary">Вернуться на главную</a>
+            <a href="#" class="search-modal btn secondary">Поиск по сайту</a>
+          </div>
+        </div>
+      </div>
+
+<script type="module" src="./script.js">import { header } from "../../components/header.js";
+  import { footer } from "../../components/footer.js";
+  
+  const app = document.querySelector("#app4");
+  app.prepend(header());
+  document.body.append(footer()); </script>
+
+</body>
+</html>

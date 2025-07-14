@@ -1,7 +1,7 @@
 import { routes } from "./routes";
 
 async function renderNotFoundPage(app) {
-  const response = await fetch("src/pages/404/index.html");
+  const response = await fetch("/src/pages/404/index.html");
   const page = await response.text();
 
   app.innerHTML = page;
