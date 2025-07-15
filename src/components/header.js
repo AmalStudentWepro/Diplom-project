@@ -23,7 +23,7 @@ export function header() {
   const socialIcons = document.createElement("div");
   socialIcons.className = "social-icons";
   const socialImg = document.createElement("img");
-  socialImg.src = "/public/group.png";
+  socialImg.src = "https://tmdb-303.netlify.app/social-links.svg";
   socialImg.alt = "Соцсети";
   socialIcons.appendChild(socialImg);
 
@@ -45,7 +45,7 @@ export function header() {
   const searchBtn = document.createElement("button");
   searchBtn.className = "search-btn";
   const searchImg = document.createElement("img");
-  searchImg.src = "/public/search.png";
+  searchImg.src = "https://tmdb-303.netlify.app/search-vector.svg";
   searchImg.alt = "Поиск";
   searchBtn.appendChild(searchImg);
 
