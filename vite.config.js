@@ -13,7 +13,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 home: resolve(__dirname, 'src/pages/home/index.html'),
-                signin: resolve(__dirname, 'src/pages/login/index.html'),
+                signin: resolve(__dirname, 'src/pages/signin/index.html'),
                 signup: resolve(__dirname, 'src/pages/signup/index.html'),
                 404: resolve(__dirname, 'src/pages/404/index.html'),
                 profile: resolve(__dirname, 'src/pages/profile/index.html'),
