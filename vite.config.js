@@ -17,6 +17,8 @@ export default defineConfig({
                 signup: resolve(__dirname, 'src/pages/signup/index.html'),
                 404: resolve(__dirname, 'src/pages/404/index.html'),
                 profile: resolve(__dirname, 'src/pages/profile/index.html'),
+                movie: resolve(__dirname, 'src/pages/movie/index.html'),
+                actor: resolve(__dirname, 'src/pages/actor/index.html'),
             },
         },
     },

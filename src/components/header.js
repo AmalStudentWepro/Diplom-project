@@ -16,16 +16,9 @@ export function header() {
   const logo = document.createElement("div");
   logo.className = "logo";
   const logoImg = document.createElement("img");
-  logoImg.src = "/public/logo.png";
+  logoImg.src = "https://tmdb-303.netlify.app/logo.svg";
   logoImg.alt = "Лого";
-
-  const spanBlue = document.createElement("span");
-  spanBlue.className = "blue";
-  spanBlue.textContent = "Kino";
-  const spanWhite = document.createElement("span");
-  spanWhite.className = "white";
-  spanWhite.textContent = "area";
-  logo.append(logoImg, spanBlue, spanWhite);
+  logo.append(logoImg);
 
   const socialIcons = document.createElement("div");
   socialIcons.className = "social-icons";
